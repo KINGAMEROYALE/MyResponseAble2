@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957255875479",
+    "project_id": "responseable-46b77",
+    "storage_bucket": "responseable-46b77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957255875479:android:22c5bafe073b50c43ae2d2",
+        "android_client_info": {
+          "package_name": "com.example.myresponseable"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE88xHGemz3mz7ILwKw8-lFg-wx64FVGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
