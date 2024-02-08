@@ -8,4 +8,6 @@
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="full_name">Full Name</string>
+    <string name="birthdate">Birthday</string>
+    <string name="phonenum">Phone Number</string>
 </resources>

@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputEditText passwordET, emailET;
     private FirebaseAuth auth;
 
-    String emailPattern = "[a-zA-z0-9.-_]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "^[a-zA-Z0-9._%+-]+@[^.]+\\.ort\\.org\\.il$";
 
     ProgressDialog progressDialog;
 
@@ -116,7 +116,7 @@ public class SignUpActivity extends AppCompatActivity {
             emailET.setError("Give Proper Email Address: ");
             return false;
         } else if (passwordET.length() < 6) {
-            passwordET.setError("More than six characters: ");
+            passwordET.setError("Enter more than six characters: ");
             Toast.makeText(SignUpActivity.this, "Password needs to be longer than six characters. ", Toast.LENGTH_SHORT).show();
             return false;
         }
