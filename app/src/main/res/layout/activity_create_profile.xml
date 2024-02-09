@@ -13,7 +13,7 @@
         android:id="@+id/profileImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="250dp"
         android:src="@drawable/baseline_person_24"/>
 
     <LinearLayout
@@ -22,12 +22,14 @@
         android:gravity="center">
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/camera"/>
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,44 +38,14 @@
 
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/full_name">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/full_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/birthdate">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/birthdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/phonenum">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phonenum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/tochat"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Proceed" />
 
 
 

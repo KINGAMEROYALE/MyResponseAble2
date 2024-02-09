@@ -1,15 +1,15 @@
 package com.example.myresponseable;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -18,7 +18,7 @@ import android.widget.ImageView;
 
 public class CreateProfileActivity extends AppCompatActivity {
 
-    Button cameraBT, galleryBT;
+    Button cameraBT, galleryBT, tochatBT;
     Bitmap imageBitmap;
 
     ImageView profileImg;
@@ -41,7 +41,7 @@ public class CreateProfileActivity extends AppCompatActivity {
                         profileImg.setImageBitmap(imageBitmap);
 
                     }catch (Exception e){
-
+                        e.printStackTrace();
                     }
                 }
             });
@@ -53,11 +53,11 @@ public class CreateProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_profile);
         cameraBT = findViewById(R.id.camera);
         galleryBT = findViewById(R.id.gallery);
+        tochatBT = findViewById(R.id.tochat);
         profileImg = findViewById(R.id.profileImage);
         cameraBT.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openCamera();
+            public void onClick(View v) {openCamera();
             }
         });
 
@@ -67,14 +67,29 @@ public class CreateProfileActivity extends AppCompatActivity {
                 openGallery();
             }
         });
+        tochatBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tochat();
+            }
+        });
     }
 
     private void openGallery() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        galleryIntent.launch(intent);
     }
 
     private void openCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         cameraIntent.launch(intent);
+    }
+
+
+
+    private void tochat() {
+        Intent intent = new Intent(CreateProfileActivity.this, SignUpActivity.class);
+        startActivity(intent);
     }
 
 }

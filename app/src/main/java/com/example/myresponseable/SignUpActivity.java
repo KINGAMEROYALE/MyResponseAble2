@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputEditText passwordET, emailET;
     private FirebaseAuth auth;
 
-    String emailPattern = "^[a-zA-Z0-9._%+-]+@[^.]+\\.ort\\.org\\.il$";
+    String emailPattern = "^\\d{5}@guttman\\.ort\\.org\\.il$";
 
     ProgressDialog progressDialog;
 
@@ -67,8 +66,8 @@ public class SignUpActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressDialog.dismiss();
                     if (task.isSuccessful()) {
-                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                        intent.putExtra("email", "register");
+                        Intent intent = new Intent(SignUpActivity.this, SuccessActivity.class);
+                        intent.putExtra("email", "Successfully registered!");
                         startActivity(intent);
                         finish();
                     } else {
@@ -90,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressDialog.dismiss();
                     if (task.isSuccessful()) {
-                        Intent intent = new Intent(SignUpActivity.this, CreateProfileActivity.class);
+                        Intent intent = new Intent(SignUpActivity.this, ChatActivity.class);
                         intent.putExtra("email", email);
                         startActivity(intent);
                         finish();
